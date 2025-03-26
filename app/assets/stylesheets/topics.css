@@ -1,0 +1,78 @@
+/* 话题墙样式 */
+
+.topic-card {
+  transition: transform 0.3s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Instagram 帖子卡片样式 */
+.instagram-post-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.instagram-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.instagram-post-card .card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.instagram-post-card .card-img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-caption {
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.instagram-post-card .hashtags .badge {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.post-stats {
+  font-size: 0.85rem;
+}
+
+#refresh-button {
+  position: relative;
+}
+
+#refresh-button.loading {
+  pointer-events: none;
+}
+
+#refresh-button.loading:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-top: -8px;
+  margin-left: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 123, 255, 0.2);
+  border-top-color: rgba(0, 123, 255, 0.8);
+  animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}

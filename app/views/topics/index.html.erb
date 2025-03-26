@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>话题墙</h1>
+      <p class="lead">探索热门话题，查看实时Instagram内容</p>
+    </div>
+    <div class="col-md-4">
+      <%= form_with(model: @topic, class: "card p-3") do |form| %>
+        <h5 class="card-title">添加新话题</h5>
+        <div class="mb-3">
+          <%= form.label :name, "话题名称", class: "form-label" %>
+          <%= form.text_field :name, class: "form-control", placeholder: "输入话题名称（不含#）" %>
+        </div>
+        <div class="d-grid">
+          <%= form.submit "创建话题", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <h3>现有话题</h3>
+      <div class="row">
+        <% @topics.each do |topic| %>
+          <div class="col-md-3 mb-3">
+            <div class="card h-100 topic-card">
+              <div class="card-body">
+                <h5 class="card-title">#<%= topic.name %></h5>
+                <p class="card-text"><small class="text-muted">创建于 <%= topic.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
+                <div class="d-grid gap-2">
+                  <%= link_to "查看内容", topic_path(topic), class: "btn btn-outline-primary" %>
+                  <%= button_to "删除话题", topic_path(topic), method: :delete, class: "btn btn-outline-danger", data: { turbo_confirm: "确定要删除话题 ##{topic.name} 吗？此操作不可撤销。" } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
