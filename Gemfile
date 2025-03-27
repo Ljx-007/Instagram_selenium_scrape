@@ -44,7 +44,7 @@ gem "thruster", require: false
 
 # Gems for web scraping
 gem "nokogiri", "~> 1.18.0"
-gem "httparty", "~> 0.21.0"
+gem "httparty", "~> 0.23.0"
 
 # 环境变量管理
 gem 'dotenv-rails', groups: [:development, :test, :production]
