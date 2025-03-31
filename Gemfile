@@ -43,7 +43,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # Gems for web scraping
-gem "nokogiri", "~> 1.18.0"
+gem "nokogiri", "~> 1.18.7"
 gem "httparty", "~> 0.21.0"
 
 # 环境变量管理
